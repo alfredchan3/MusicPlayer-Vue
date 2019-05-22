@@ -6,8 +6,10 @@ module.exports = {
   lintOnSave: true,
   chainWebpack: (config)=>{
     config.resolve.alias
-      .set('@', resolve('src'))
-      .set('assets',resolve('src/assets'))
+      .set('src', resolve('src'))
+      .set('common',resolve('src/common'))
       .set('components',resolve('src/components'))
+      .set('base',resolve('src/base'))
+      .set('api',resolve('src/api'))
   }
 }
