@@ -20,6 +20,24 @@ const RankDetail = (resolve) => {
   })
 }
 
+const Search = (resolve) => {
+  import('components/search/search').then((module) => {
+    resolve(module)
+  })
+}
+
+const SingerDetail = (resolve) => {
+  import('components/singer-detail/singer-detail').then((module) => {
+    resolve(module)
+  })
+}
+
+const MusicList = (resolve) => {
+  import('components/music-list/music-list').then((module) => {
+    resolve(module)
+  })
+}
+
 export default new Router({
   routes: [
     {
@@ -40,6 +58,20 @@ export default new Router({
           component: RankDetail
         }
       ]
-    }
+    },
+    {
+      path: '/search',
+      component: Search,
+      children: [
+        {
+          path: 'singer/:id',
+          component: SingerDetail
+        },
+        {
+          path: 'list/:id',
+          component: MusicList
+        }
+      ]
+    },
   ]
 })
