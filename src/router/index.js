@@ -25,7 +25,7 @@ export default new Router({
     {
       // Default redirect to recommend
       path: '/',
-      redirect: '/recommend'
+      redirect: '/rank'
     },
     {
       path: '/recommend',
