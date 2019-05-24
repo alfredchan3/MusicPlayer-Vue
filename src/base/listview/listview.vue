@@ -1,11 +1,11 @@
 <template>
   <scroll
-  class="listview"
-  ref="listview"
-  :listenScroll="listenScroll"
-  @scroll="scroll"
-  :probeType="probeType"
-  >
+    class="listview"
+    ref="listview"
+    :listenScroll="listenScroll"
+    @scroll="scroll"
+    :probeType="probeType"
+    >
     <ul>
       <li v-for="group in data" class="list-group" :key="group.id" ref="listGroup">
         <h2 class="list-group-title">{{ group.title }}</h2>
@@ -18,7 +18,7 @@
       </li>
     </ul>
     <div class="list-shortcut" @touchstart="onShortcutStart"
-    @touchmove.stop.prevent="onShortcutMove">
+      @touchmove.stop.prevent="onShortcutMove">
       <ul>
         <li v-for="(item, index) in shortcutList"
         class="item"
