@@ -38,6 +38,12 @@ const MusicList = (resolve) => {
   })
 }
 
+const Singer = (resolve) => {
+  import('components/singer/singer').then((module) => {
+    resolve(module)
+  })
+}
+
 export default new Router({
   routes: [
     {
@@ -70,6 +76,16 @@ export default new Router({
         {
           path: 'list/:id',
           component: MusicList
+        }
+      ]
+    },
+    {
+      path: '/singer',
+      component: Singer,
+      children: [
+        {
+          path: ':id',
+          component: SingerDetail
         }
       ]
     },
